@@ -1,0 +1,7 @@
+vocalserver:
+  type: murmur
+  base_uri: https://voice.clubelek.fr:80/api/
+  server_id: 1
+  channel_name: minecraft
+  deep_search: true
+  kickonkick: true

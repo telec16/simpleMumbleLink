@@ -7,20 +7,18 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class HttpRequestSender {
+public class HttpRequest {
 
-	// private static final String GET_URL =
-	// "https://voice.clubelek.fr:80/api/servers/1/user";
 	public static final String GET = "GET";
 	public static final String POST = "POST";
 	public static final String DELETE = "DELETE";
 
-	public static String r(String method, String endpoint, String request) throws IOException {
-		return r(method, endpoint, request, null);
+	public static String r(String method, String base_uri, String request) throws IOException {
+		return r(method, base_uri, request, null);
 	}
 
-	public static String r(String method, String endpoint, String request, String params) throws IOException {
-		URL obj = new URL(endpoint + request);
+	public static String r(String method, String base_uri, String request, String params) throws IOException {
+		URL obj = new URL(base_uri + request);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
 		con.setRequestMethod(method);
